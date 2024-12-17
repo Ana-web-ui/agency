@@ -74,9 +74,37 @@ const initSLider = function(currentSlider){
         }
 
         moveSliderItem();
+
+        sliderNextBtn.addEventListener('click', slideNext);
     }
 
-    sliderNextBtn.addEventListener('click', slideNext);
+    
+
+
+/**
+     * PREV SLIDE
+     */
+
+const slidePrev = function(){
+
+    if(currentSlidePos <= 0){
+        currentSlidePos = sliderContainer.childElementCount - 1;
+    }else {
+        currentSlidePos--;
+    }
+
+    moveSliderItem();
+
+    sliderPrevBtn.addEventListener('click', slidePrev);
+};
+
+
+
+const dontHaveExtraItem = sliderContainer.childElementCount <= 1;
+if (dontHaveExtraItem){
+    sliderNextBtn.style.display = "none";
+    sliderPrevBtn.style.display = "none";
 }
 
-for ( let i = 0, len = sliders.length; i < len; i++){ initSLider(sliders[i])};
+
+for ( let i = 0, len = sliders.length; i < len; i++){ initSLider(sliders[i])};}
