@@ -39,3 +39,44 @@ window.addEventListener("scroll", function(){
         header.classList.remove("active");
     }
 })
+
+
+/**
+ * SLIDER
+ */
+
+const sliders = document.querySelectorAll("[data-slider]");
+
+const initSLider = function(currentSlider){
+
+    const sliderContainer = currentSlider.querySelector("[data-slider-container");
+    const sliderPrevBtn = currentSlider.querySelector("[data-slider-prev]");
+    const sliderNextBtn = currentSlider.querySelector("[data-slider-next]");
+
+    let currentSlidePos = 0;
+
+    const moveSliderItem = function(){
+        sliderContainer.style.transform = `translateX(-${sliderContainer.children[currentSlidePos].offsetLeft}px)`;
+    }
+
+
+    /**
+     * NEXT SLIDE
+     */
+
+    const slideNext = function(){
+        const slideEnd = currentSlidePos >= sliderContainer.childElementCount -1;
+
+        if(slideEnd){
+            currentSlidePos = 0;
+        }else {
+            currentSlidePos++;
+        }
+
+        moveSliderItem();
+    }
+
+    sliderNextBtn.addEventListener('click', slideNext);
+}
+
+for ( let i = 0, len = sliders.length; i < len; i++){ initSLider(sliders[i])};
