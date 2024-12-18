@@ -244,6 +244,20 @@ bdoy.nav-active {
   height: 100%;
   object-fit: cover;
 }
+
+.section-subtitle {
+  font-size: var(--fs-7);
+  text-transform: uppercase;
+  color: var(--violet-blue-crayola);
+  font-weight: var(--fw-700);
+  margin-block-end: 16px;
+}
+
+.grid-list {
+  display: grid;
+  gap: 25px;
+}
+
 /*-----------------------------------*\
   #HEADER
 \*-----------------------------------*/
@@ -444,12 +458,12 @@ bdoy.nav-active {
   }
 }
 
-.hero .slider-inner{
+.hero .slider-inner {
   border-radius: var(--radius-10);
   overflow: hidden;
 }
 
-.hero .slider-container{
+.hero .slider-container {
   position: relative;
   display: flex;
   align-items: flex-start;
@@ -457,14 +471,14 @@ bdoy.nav-active {
   transition: var(--transition-2);
 }
 
-.hero .slider-item{
+.hero .slider-item {
   min-width: 100%;
   width: 100%;
-  border-radius:var(--radius-10);
+  border-radius: var(--radius-10);
   overflow: hidden;
 }
 
-.hero .slider-btn{
+.hero .slider-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -476,16 +490,68 @@ bdoy.nav-active {
   transition: var(--transition-1);
 }
 
-.hero .slider-btn:is(:hover, :focus-visible){
+.hero .slider-btn:is(:hover, :focus-visible) {
   background-color: var(--white);
 }
 
-.hero .slider-btn.prev{ left: 20px;}
+.hero .slider-btn.prev {
+  left: 20px;
+}
 
-.hero .slider-btn.next{ right: 20px;}
+.hero .slider-btn.next {
+  right: 20px;
+}
 /*-----------------------------------*\
   #SERVICE
 \*-----------------------------------*/
+.service {
+  text-align: center;
+}
+
+.service .section-title {
+  margin-block-end: 50px;
+}
+
+.service-card {
+  padding: 40px;
+  box-shadow: var(--shadow-2);
+  border-radius: var(--radius-6);
+}
+
+.service-card .card-icon {
+  width: 60px;
+  height: 60px;
+  background-color: var(--violet-blue-crayola);
+  display: grid;
+  place-items: center;
+  color: var(--white);
+  font-size: 2.5rem;
+  border-radius: var(--radius-circle);
+  margin-inline: auto;
+}
+
+.service-card .card-icon ion-icon {
+  --ionicon-stroke-width: 50px;
+}
+
+.service .card-title {
+  margin-block: 16px 10px;
+}
+
+.service-card .btn-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-block-start: 10px;
+  color: var(--violet-blue-crayola);
+  font-weight: var(--fw-700);
+  transition: var(--transition-1);
+}
+
+.service-card .btn-text:is(:hover, :focus-visible) {
+  opacity: 0.9;
+}
 
 /*-----------------------------------*\
   #ABOUT
